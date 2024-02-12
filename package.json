@@ -25,7 +25,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "yarn run clean && tsup",
+    "build": "tsup",
     "release": "yarn build && release-it",
     "dev": "tsup src/dev.ts --env.LOG \"true\"  --format esm --watch --sourcemap --clean --onSuccess \"node dist/dev.js\"",
     "clean": "rm -rf node_modules && rm -rf dist"
