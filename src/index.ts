@@ -113,14 +113,14 @@ export class SMSOffice {
     );
   }
 
-  public async balance(): Promise<SMSOfficeResponse> {
+  public async balance(): Promise<string> {
     if (!this.apiKey) {
       throw new Error("API key is required.");
     }
 
     try {
       return await this._requests
-        .get<SMSOfficeResponse>(
+        .get<string>(
           this._encodeQuery("/api/getBalance", {
             key: this.apiKey,
           })
