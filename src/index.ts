@@ -1,5 +1,5 @@
-import requestly from "requestly";
 import { BASE_URL } from "./config";
+import axios from "axios";
 
 export interface SMSOfficeOptions {
   apiKey?: string;
@@ -19,9 +19,11 @@ export interface SMSOfficeResponse<T = unknown> {
 }
 
 export class SMSOffice {
-  protected _requests = requestly.create({
-    baseUrl: BASE_URL,
-    userAgent: `SMSOffice-SDK/0.0.1`,
+  protected _requests = axios.create({
+    baseURL: BASE_URL,
+    headers: {
+      "User-Agent": `SMSOffice-SDK/0.0.1`,
+    },
   });
 
   private apiKey?: string = process.env.SMSOFFICE_API_KEY;
