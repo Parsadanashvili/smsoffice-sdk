@@ -1,6 +1,6 @@
 {
   "name": "smsoffice-sdk",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "SDK for SMSOffice",
   "publishConfig": {
     "access": "public",
@@ -26,7 +26,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsup",
-    "release": "npm publish",
+    "release": "yarn build && npm publish",
     "dev": "tsup src/dev.ts --env.LOG \"true\"  --format esm --watch --sourcemap --clean --onSuccess \"node dist/dev.js\"",
     "clean": "rm -rf node_modules && rm -rf dist"
   },
